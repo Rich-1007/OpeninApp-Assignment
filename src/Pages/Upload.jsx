@@ -16,7 +16,7 @@ const Upload = () => {
 
   return (
     <>
-      <div className="flex flow-row relative md:min-h-screen ">
+      <div className="flex flow-row relative md:min-h-screen dark:bg-[#161616] ">
         <Navbar className=" " istrue={istrue} setIstrue={setIstrue} />
         <MobileNavbar
           className="md:hidden"
