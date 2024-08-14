@@ -1,4 +1,5 @@
 // import "./App.css";
+import { Outlet } from "react-router-dom";
 import DropZone from "./Component/DropZone";
 import Loader from "./Component/Loader";
 import UploadTable from "./Component/UploadTable";
@@ -7,13 +8,21 @@ import MobileNavbar from "./Pages/MobileNavbar";
 import Navbar from "./Pages/Navbar";
 import Upload from "./Pages/Upload";
 
+
 function App() {
   return (
     <>
+    <Outlet />
+
+
+
+     
+      
+      
       {/* <Login /> */}
       {/* <Navbar /> */}
       {/* <DropZone /> */}
-      <Upload />
+      {/* <Upload /> */}
       {/* <Loader /> */}
       {/* <MobileNavbar /> */}
       {/* <UploadTable /> */}

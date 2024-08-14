@@ -22,7 +22,7 @@ const MobileNavbar = ({ istrue }) => {
       <div
         className={
           isShow
-            ? "  absolute transition-all duration-300 rounded-r-3xl px-6 py-10 bg-pink-300 h-screen md:hidden"
+            ? "  absolute transition-all duration-300 rounded-r-3xl px-6 py-10 bg-gray-100 dark:bg-[#0D0D0D] h-screen md:hidden"
             : "max-w-0 transition-all duration-300"
         }
       >
@@ -33,7 +33,7 @@ const MobileNavbar = ({ istrue }) => {
             </div>
 
             <div>
-              <span className="font-semibold text-2xl">Base</span>
+              <span className="font-semibold text-2xl dark:text-white transition-all duration-500">Base</span>
             </div>
           </div>
 

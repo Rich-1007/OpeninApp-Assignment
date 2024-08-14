@@ -1,25 +1,28 @@
-import React, { useState } from "react";
-import { BsFillCalendar2DateFill } from "react-icons/bs";
-import { FaFileAlt } from "react-icons/fa";
-import { IoIosNotifications, IoMdSettings } from "react-icons/io";
-import { IoFileTray } from "react-icons/io5";
+import React, { useContext, useState } from "react";
 import { LuPanelLeftOpen } from "react-icons/lu";
-import { MdInsertChart } from "react-icons/md";
-import { PiSquaresFourFill } from "react-icons/pi";
+import { MdInsertChart, MdOutlineNightlight } from "react-icons/md";
+import { WiDaySunny } from "react-icons/wi";
+import { DarkModeContext } from "../Context";
 
 const Navbar = () => {
   const [istrue, setIstrue] = useState();
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+
+  // const [dark, setDark] = useState(false);
+  const darkModeHandler = () => {
+    toggleDarkMode();
+  };
 
   return (
     <>
       <div
         className={
           istrue
-            ? "bg-white max-w-64 py-14 px-6 transition-all duration-100 hiden md:block"
-            : "bg-white transition-all duration-700 max-w-40 py-14 px-6 outline hidden md:block"
+            ? "dark:bg-[#0D0D0D] bg-white max-w-64 py-14 px-6 transition-all duration-100 hiden md:block "
+            : "bg-white dark:bg-[#0D0D0D] transition-all duration-700 max-w-40 py-14 px-6  hidden md:block"
         }
       >
-        <div className="flex flex-row items-center justify-between pb-8">
+        <div className=" flex flex-row items-center justify-between pb-8">
           <div className=" flex flex-row items-center justify-start gap-3 ">
             <div className="w-14">
               <img src="/Group 200.png" alt="" className="w-14" />
@@ -32,7 +35,9 @@ const Navbar = () => {
                   : "   transition-all duration-200 overflow-hidden max-w-0"
               }
             >
-              <span className="font-semibold text-2xl">Base</span>
+              <span className="font-semibold text-2xl dark:text-gray-100 transition-all duration-500 ">
+                Base
+              </span>
             </div>
           </div>
 
@@ -101,6 +106,22 @@ const Navbar = () => {
             <div className="flex flex-row items-center gap-3 py-3 ">
               <span>Settings</span>
             </div>
+          </div>
+        </div>
+
+        <div
+          onClick={darkModeHandler}
+          className=" flex flex-row justify-between items-center md:mt-16 w-fit bg-gray-200 py-2 px-2 gap-2 rounded-full  dark:bg-gray-400   "
+        >
+          <div className="rounded-full bg-gray-100 dark:bg-gray-400 transition-all duration-500  h-9 w-9 flex items-center justify-center">
+            <WiDaySunny size={30} className="dark:text-white transition-all duration-500  " />
+          </div>
+          <div className="rounded-full  dark:bg-gray-500 transition-all duration-500  h-9 w-9 flex items-center justify-center">
+            <MdOutlineNightlight
+              color=" "
+              size={26}
+              className=" dark:text-white  transition-all duration-500  text-gray-500"
+            />
           </div>
         </div>
       </div>

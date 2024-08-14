@@ -3,13 +3,13 @@ import { useDropzone } from "react-dropzone";
 import { FiUpload } from "react-icons/fi";
 import Loader from "./Loader";
 // import { Toaster } from "react-hot-toast";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 
 function DropZone({ setIsShow }) {
   const [fileName, setFileName] = useState();
   const [istrue, setIstrue] = useState(false);
 
-  const notify = () => toast('File Uploaded');
+  const notify = () => toast("File Uploaded");
   // console.log(fileName);
 
   const onDrop = useCallback((acceptedFiles) => {
@@ -30,16 +30,15 @@ function DropZone({ setIsShow }) {
         console.log("timeout");
         setIsShow((prev) => !prev);
 
-        notify()
+        notify();
       }, 4000);
     }
   }
 
-
   return (
     <>
-      <div className="bg-white p-4 rounded-md w-2/5 space-y-3 ">
-        <div className="flex items-center justify-center  h-60  bg-white border border-gray-200 rounded-xl">
+      <div className="bg-white p-4 rounded-md md:w-2/5 space-y-3 dark:bg-[#0D0D0D] ">
+        <div className="flex items-center justify-center  dark:bg-[#0D0D0D] w-72 md:w-auto h-60  bg-white border border-gray-200 dark:border-gray-600 rounded-xl">
           <div {...getRootProps()} className="">
             <input {...getInputProps()} />
 
@@ -60,11 +59,11 @@ function DropZone({ setIsShow }) {
                     </div>
                   </div>
                 ) : (
-                  <div>
-                    <p className="font-thin text-gray-400">
+                  <div className="flex md:flex-row flex-col  items-center">
+                    <p className="font-thin text-gray-400 px-1 ">
                       Drop your excel sheet here or
-                      <span className="text-blue-600"> Browse</span>
                     </p>
+                    <span className="text-blue-600"> Browse</span>
                   </div>
                 )}
               </div>
@@ -74,7 +73,6 @@ function DropZone({ setIsShow }) {
 
         <div
           onClick={handleUpload}
-          
           className={
             fileName
               ? "bg-indigo-500 hover:cursor-pointer w-full rounded-md  py-2"
