@@ -146,7 +146,7 @@ const Login = () => {
                 <div className="flex flex-col gap-2">
                   <span>Email address</span>
                   <input
-                    className="bg-gray-100 dark:bg-[#161616] transition-all duration-500  rounded-lg placeholder:px-3 py-3 outline-none"
+                    className="pl-3 bg-gray-100 dark:bg-[#161616] transition-all duration-500  rounded-lg placeholder:px-3 py-3 outline-none"
                     type="email"
                     placeholder="Enter your email"
                   />
@@ -154,7 +154,7 @@ const Login = () => {
                 <div className="flex flex-col gap-2">
                   <span>Password</span>
                   <input
-                    className="bg-gray-100 rounded-lg dark:bg-[#161616] transition-all duration-500   placeholder:px-3 py-3 outline-none"
+                    className="bg-gray-100 pl-3 rounded-lg dark:bg-[#161616] transition-all duration-500   placeholder:px-3 py-3 outline-none"
                     type="password"
                     placeholder="Enter Password"
                   />
