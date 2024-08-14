@@ -61,7 +61,7 @@ const Login = () => {
     <>
       <Toaster />
       <div className="bg-gray-100 dark:bg-[#161616] transition-all duration-500 flex flex-row w-screen md:w-full h-screen md:py-6 md:px-6 items-center">
-        <div className="bg-[#605bff] dark:bg-[#767EFC] transition-all duration-500  py-9 px-9 rounded-xl h-full w-1/2 hidden lg:block">
+        <div className="  bg-[#605bff] dark:bg-[#767EFC] transition-all duration-500  py-9 px-9 rounded-xl h-full w-1/2 hidden lg:block">
           <div className=" overflow-hidden pt-7 pl-7 bg-[#767EFC] dark:bg-[#605bff] transition-all duration-500  rounded-xl h-full flex flex-col justify-between">
             <div className="flex flex-col justify-between gap-8">
               <div className="bg-white  flex flex-row gap-1 justify-center items-center rounded-3xl w-24 p-2">
@@ -103,84 +103,95 @@ const Login = () => {
             </div>
           </div>
         </div>
-
-        <div className="lg:px-12 lg:py-16 lg:w-1/2 w-full">
-          <div className="lg:hidden h-20 bg-indigo-500 w-full flex flex-row items-center justify-start gap-3 px-3">
-            <div className="w-20">
-              <img src="/White-Logo and company.png" alt="" />
-            </div>
-          </div>
-
-          <div className="px-4 lg:px-0 ">
-            <div className="py-2 flex flex-col">
-              <span className="text-2xl font-bold dark:text-white transition-all duration-500 ">
-                Sign In
-              </span>
-              <span className="font-bold text-xs text-nowrap dark:text-white transition-all duration-500 ">
-                Sign in to your account
-              </span>
+        
+        
+        
+        <div className="  lg:w-1/2 flex justify-center items-start w-full md:w-screen ">
+          <div className="lg:max-w-96 md:max-w-[600px] flex justify-center w-full flex-col md:w-screen">
+            <div className=" absolute top-0 lg:hidden md:hidden h-20 bg-indigo-500 w-full flex flex-row items-center justify-start gap-3 px-3">
+              <div className="w-20">
+                <img src="/White-Logo and company.png" alt="" />
+              </div>
             </div>
 
-            <div className="py-2 flex flex-row gap-3  w-full justify-between">
-              <div
-                onClick={HandleLogin}
-                className="bg-white dark:bg-black  transition-all duration-500  hover:cursor-pointer py-2 flex flex-row justify-center items-center gap-2 px-4 rounded-xl w-full"
-              >
-                <FcGoogle />
-                <span className="text-nowrap text-gray-500 text-xs font-semibold ">
-                  Sign in with Google
+            <div className="px-4 lg:px-0  ">
+              <div className="py-2 flex flex-col gap-2  mt-16">
+                <span className="text-2xl font-bold dark:text-white transition-all duration-500 ">
+                  Sign In
+                </span>
+                <span className="font-bold text-xs text-nowrap dark:text-white transition-all duration-500 ">
+                  Sign in to your account
                 </span>
               </div>
-              <div className="bg-white dark:bg-black transition-all duration-500  hover:cursor-pointer py-2 flex flex-row justify-center items-center gap-2 px-4 rounded-xl w-full">
-                <BsApple color="gray" />
-                <span className="text-nowrap text-gray-500 text-xs font-semibold ">
-                  Sign in with Apple
+
+              <div className="py-2 flex flex-row gap-3  w-full justify-between ">
+                <div
+                  onClick={HandleLogin}
+                  className="bg-white dark:bg-black  transition-all duration-500  hover:cursor-pointer py-2 flex flex-row justify-center items-center gap-2 px-4 rounded-xl w-full"
+                >
+                  <FcGoogle />
+                  <span className="text-nowrap text-gray-500 text-xs font-semibold ">
+                    Sign in with Google
+                  </span>
+                </div>
+                <div className="bg-white dark:bg-black transition-all duration-500  hover:cursor-pointer py-2 flex flex-row justify-center items-center gap-2 px-4 rounded-xl w-full">
+                  <BsApple color="gray" />
+                  <span className="text-nowrap text-gray-500 text-xs font-semibold ">
+                    Sign in with Apple
+                  </span>
+                </div>
+              </div>
+
+              <div className="bg-white  dark:bg-black dark:text-white transition-all duration-500  rounded-lg space-y-3 p-5  text-sm font-semibold">
+                <div className="flex flex-col gap-2">
+                  <span>Email address</span>
+                  <input
+                    className="bg-gray-100 dark:bg-[#161616] transition-all duration-500  rounded-lg placeholder:px-3 py-3 outline-none"
+                    type="email"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <span>Password</span>
+                  <input
+                    className="bg-gray-100 rounded-lg dark:bg-[#161616] transition-all duration-500   placeholder:px-3 py-3 outline-none"
+                    type="password"
+                    placeholder="Enter Password"
+                  />
+                </div>
+                <div>
+                  <a href="" className="text-blue-700">
+                    Forgot password?
+                  </a>
+                </div>
+
+                <div
+                  onClick={HandleLogin}
+                  className="bg-indigo-500 hover:cursor-pointer text-white dark:text-black transition-all duration-500 flex justify-center items-center rounded-lg py-3 h-12 "
+                >
+                  {istrue ? (
+                    <Loader />
+                  ) : (
+                    <span className="text-xl">Sign In</span>
+                  )}
+                </div>
+              </div>
+              <div className="text-center pt-4 flex flex-col md:flex-row justify-center">
+                <span className="text-gray-400">Don't have an account? </span>
+                <span className="text-blue-700 text-xl md:text-base hover:cursor-pointer">
+                  Register here
                 </span>
               </div>
-            </div>
 
-            <div className="bg-white dark:bg-black dark:text-white transition-all duration-500  rounded-lg space-y-3 p-5 mt-2 text-sm font-semibold">
-              <div className="flex flex-col gap-2">
-                <span>Email address</span>
-                <input
-                  className="bg-gray-100 dark:bg-[#161616] transition-all duration-500  rounded-lg placeholder:px-3 py-3 outline-none"
-                  type="email"
-                  placeholder="Enter your email"
+              <div className="pt-8 flex flex-row justify-center gap-5  text-2xl text-gray-400">
+                <FaGithub className="hover:cursor-pointer" size={40} />
+                <AiFillTwitterCircle
+                  className="hover:cursor-pointer"
+                  size={40}
                 />
+                <RxLinkedinLogo className="hover:cursor-pointer" size={40} />
+                <IoLogoDiscord className="hover:cursor-pointer" size={40} />
               </div>
-              <div className="flex flex-col gap-2">
-                <span>Password</span>
-                <input
-                  className="bg-gray-100 rounded-lg dark:bg-[#161616] transition-all duration-500   placeholder:px-3 py-3 outline-none"
-                  type="password"
-                  placeholder="Enter Password"
-                />
-              </div>
-              <div>
-                <a href="" className="text-blue-700">
-                  Forgot password?
-                </a>
-              </div>
-
-              <div
-                onClick={HandleLogin}
-                className="bg-indigo-500 hover:cursor-pointer text-white dark:text-black transition-all duration-500 flex justify-center items-center rounded-lg py-3 h-12 "
-              >
-                {istrue ? <Loader /> : <span className="text-xl">Sign In</span>}
-              </div>
-            </div>
-            <div className="text-center pt-4 flex flex-col md:flex-row justify-center">
-              <span className="text-gray-400">Don't have an account? </span>
-              <span className="text-blue-700 text-xl md:text-base hover:cursor-pointer">
-                Register here
-              </span>
-            </div>
-
-            <div className="pt-8 flex flex-row justify-center gap-5  text-2xl text-gray-400">
-              <FaGithub className="hover:cursor-pointer" size={40} />
-              <AiFillTwitterCircle className="hover:cursor-pointer" size={40} />
-              <RxLinkedinLogo className="hover:cursor-pointer" size={40} />
-              <IoLogoDiscord className="hover:cursor-pointer" size={40} />
             </div>
           </div>
         </div>
