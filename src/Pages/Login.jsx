@@ -10,10 +10,13 @@ import { RxLinkedinLogo } from "react-icons/rx";
 import { WiDaySunny } from "react-icons/wi";
 import { useNavigate } from "react-router-dom";
 import { DarkModeContext } from "../Context";
+import toast, { Toaster } from "react-hot-toast";
+import Loader from "../Component/Loader";
 
 const Login = () => {
   const [user, setUser] = useState([]);
   const [profile, setProfile] = useState([]);
+  const [istrue, setIstrue] = useState(false);
 
   const navigate = useNavigate();
 
@@ -30,6 +33,8 @@ const Login = () => {
   };
 
   useEffect(() => {
+    const notify = () => toast("successfully logged in");
+
     if (user) {
       fetch(
         `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`,
@@ -42,7 +47,12 @@ const Login = () => {
       )
         .then((res) => {
           if (res?.ok) {
-            navigate("/Upload");
+            setIstrue(true);
+            notify();
+
+            setTimeout(() => {
+              navigate("/Upload");
+            }, 5000);
           }
         })
         .catch((err) => console.log(err));
@@ -51,6 +61,7 @@ const Login = () => {
 
   return (
     <>
+      <Toaster />
       <div className="bg-gray-100 dark:bg-[#161616] transition-all duration-500 flex flex-row w-screen md:w-full h-screen md:py-6 md:px-6 ">
         <div className="bg-[#605bff] dark:bg-[#767EFC] transition-all duration-500  py-9 px-9 rounded-xl h-full w-1/2 hidden md:block">
           <div className=" overflow-hidden pt-7 pl-7 bg-[#767EFC] dark:bg-[#605bff] transition-all duration-500  rounded-xl h-full flex flex-col justify-between">
@@ -153,8 +164,11 @@ const Login = () => {
                 </a>
               </div>
 
-              <div className="bg-indigo-500 hover:cursor-pointer text-white dark:text-black transition-all duration-500 flex justify-center items-center rounded-lg py-3 ">
-                <button  onClick={HandleLogin}>Sign In</button>
+              <div
+                onClick={HandleLogin}
+                className="bg-indigo-500 hover:cursor-pointer text-white dark:text-black transition-all duration-500 flex justify-center items-center rounded-lg py-3 "
+              >
+                {istrue ? <Loader /> : <span>Sign In</span>}
               </div>
             </div>
             <div className="text-center pt-4 flex flex-col md:flex-row justify-center">

@@ -7,15 +7,12 @@ import MobileNavbar from "./MobileNavbar";
 import { IoReorderThreeOutline } from "react-icons/io5";
 import MobileUploadTable from "../Component/MobileUploadTable";
 
-import toast, { Toaster } from "react-hot-toast";
 import { DarkModeContext } from "../Context";
+
 
 const Upload = () => {
   const [isShow, setIsShow] = useState(false);
   const [istrue, setIstrue] = useState(false);
-  // console.log(istrue);
-
-  // console.log(isShow);
 
   function HandleHam() {
     setIstrue(true);
@@ -30,6 +27,7 @@ const Upload = () => {
 
   return (
     <>
+    
       <div className="flex flow-row relative  ">
         <Navbar className=" " istrue={istrue} setIstrue={setIstrue} />
         <MobileNavbar className="md:hidden" setIstrue={setIstrue} istrue={istrue} />
