@@ -35,8 +35,8 @@ function DropZone({ setIsShow }) {
   return (
     <>
       <Toaster />
-      <div className="bg-white p-4 rounded-md md:w-2/5 space-y-3 dark:bg-[#0D0D0D] ">
-        <div className="flex items-center justify-center  dark:bg-[#0D0D0D] w-72 md:w-auto h-60  bg-white border border-gray-200 dark:border-gray-600 rounded-xl">
+      <div className="bg-white p-4 rounded-md md:w-2/5 space-y-3 dark:bg-[#0D0D0D] transition-all duration-500 ">
+        <div className="flex items-center justify-center  dark:bg-[#0D0D0D]  transition-all duration-500 w-72 md:w-auto h-60  bg-white border border-gray-200 dark:border-gray-600  rounded-xl">
           <div {...getRootProps()} className="">
             <input {...getInputProps()} />
 

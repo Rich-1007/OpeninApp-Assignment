@@ -60,8 +60,8 @@ const Login = () => {
   return (
     <>
       <Toaster />
-      <div className="bg-gray-100 dark:bg-[#161616] transition-all duration-500 flex flex-row w-screen md:w-full h-screen md:py-6 md:px-6 ">
-        <div className="bg-[#605bff] dark:bg-[#767EFC] transition-all duration-500  py-9 px-9 rounded-xl h-full w-1/2 hidden md:block">
+      <div className="bg-gray-100 dark:bg-[#161616] transition-all duration-500 flex flex-row w-screen md:w-full h-screen md:py-6 md:px-6 items-center">
+        <div className="bg-[#605bff] dark:bg-[#767EFC] transition-all duration-500  py-9 px-9 rounded-xl h-full w-1/2 hidden lg:block">
           <div className=" overflow-hidden pt-7 pl-7 bg-[#767EFC] dark:bg-[#605bff] transition-all duration-500  rounded-xl h-full flex flex-col justify-between">
             <div className="flex flex-col justify-between gap-8">
               <div className="bg-white  flex flex-row gap-1 justify-center items-center rounded-3xl w-24 p-2">
@@ -104,14 +104,14 @@ const Login = () => {
           </div>
         </div>
 
-        <div className="md:px-32 md:py-16 md:w-1/2 ">
-          <div className="md:hidden h-20 bg-indigo-500 w-screen flex flex-row items-center justify-start gap-3 px-3">
+        <div className="lg:px-12 lg:py-16 lg:w-1/2 w-full">
+          <div className="lg:hidden h-20 bg-indigo-500 w-full flex flex-row items-center justify-start gap-3 px-3">
             <div className="w-20">
               <img src="/White-Logo and company.png" alt="" />
             </div>
           </div>
 
-          <div className="px-4 md:px-0">
+          <div className="px-4 lg:px-0 ">
             <div className="py-2 flex flex-col">
               <span className="text-2xl font-bold dark:text-white transition-all duration-500 ">
                 Sign In

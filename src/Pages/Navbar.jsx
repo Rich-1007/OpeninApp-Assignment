@@ -30,8 +30,8 @@ const Navbar = ({ istrue, setIstrue }) => {
               style={{ overflow: "hidden" }}
               className={
                 istrue
-                  ? "   transition-all duration-100   max-w-64"
-                  : "   transition-all duration-100 opacity-0  max-w-32 "
+                  ? "   transition-all duration-500   max-w-64"
+                  : "   transition-all duration-500 opacity-0  max-w-32  "
               }
             >
               <span className="  font-semibold text-2xl dark:text-gray-100 transition-all duration-500 ">
@@ -80,7 +80,7 @@ const Navbar = ({ istrue, setIstrue }) => {
             className={`  text-lg text-gray-400 font-semibold  flex flex-col justify-between transition-all duration-500 ${
               istrue
                 ? "max-w-44  overflow-hidden transition-all duration-500 "
-                : "max-w-0 overflow-hidden "
+                : "max-w-0 overflow-hidden  transition-all duration-500 "
             } 
            `}
           >
