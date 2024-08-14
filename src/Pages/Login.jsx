@@ -41,8 +41,9 @@ const Login = () => {
         }
       )
         .then((res) => {
-          console.log(res);
-          navigate("/Upload");
+          if (res?.ok) {
+            navigate("/Upload");
+          }
         })
         .catch((err) => console.log(err));
     }
@@ -50,7 +51,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="bg-gray-100 dark:bg-[#161616] transition-all duration-500 flex flex-row w-screen md:w-full h-screen md:py-6 md:px-6">
+      <div className="bg-gray-100 dark:bg-[#161616] transition-all duration-500 flex flex-row w-screen md:w-full h-screen md:py-6 md:px-6 ">
         <div className="bg-[#605bff] dark:bg-[#767EFC] transition-all duration-500  py-9 px-9 rounded-xl h-full w-1/2 hidden md:block">
           <div className=" overflow-hidden pt-7 pl-7 bg-[#767EFC] dark:bg-[#605bff] transition-all duration-500  rounded-xl h-full flex flex-col justify-between">
             <div className="flex flex-col justify-between gap-8">
@@ -68,15 +69,15 @@ const Login = () => {
 
             <div className="flex flex-row justify-between">
               <div className=" flex items-end pb-7">
-                
-                
-                
                 <div
                   onClick={darkModeHandler}
                   className=" flex flex-row justify-between items-center md:mt-16 w-fit bg-gray-200 py-2 px-2 gap-2 rounded-full  dark:bg-gray-400   "
                 >
                   <div className="rounded-full bg-gray-100 dark:bg-gray-400 transition-all duration-500  h-9 w-9 flex items-center justify-center">
-                    <WiDaySunny size={30} className="dark:text-white transition-all duration-500  " />
+                    <WiDaySunny
+                      size={30}
+                      className="dark:text-white transition-all duration-500  "
+                    />
                   </div>
                   <div className="rounded-full  dark:bg-gray-500 transition-all duration-500  h-9 w-9 flex items-center justify-center">
                     <MdOutlineNightlight
@@ -86,11 +87,6 @@ const Login = () => {
                     />
                   </div>
                 </div>
-
-
-
-
-
               </div>
               <div className="  overflow-hidden flex justify-end">
                 <img src="/Login-girl-img.png" alt="" className="w-60" />
@@ -106,9 +102,11 @@ const Login = () => {
             </div>
           </div>
 
-          <div className="px-2 md:px-0">
+          <div className="px-4 md:px-0">
             <div className="py-2 flex flex-col">
-              <span className="text-2xl font-bold dark:text-white transition-all duration-500 ">Sign In</span>
+              <span className="text-2xl font-bold dark:text-white transition-all duration-500 ">
+                Sign In
+              </span>
               <span className="font-bold text-xs text-nowrap dark:text-white transition-all duration-500 ">
                 Sign in to your account
               </span>
@@ -156,7 +154,7 @@ const Login = () => {
               </div>
 
               <div className="bg-indigo-500 hover:cursor-pointer text-white dark:text-black transition-all duration-500 flex justify-center items-center rounded-lg py-3 ">
-                <button>Sign In</button>
+                <button  onClick={HandleLogin}>Sign In</button>
               </div>
             </div>
             <div className="text-center pt-4 flex flex-col md:flex-row justify-center">

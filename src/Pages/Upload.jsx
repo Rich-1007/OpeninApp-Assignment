@@ -21,6 +21,9 @@ const Upload = () => {
     setIstrue(true);
   }
 
+
+  
+
   // const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   // const [dark, setDark] = useState(false);
@@ -28,10 +31,10 @@ const Upload = () => {
   return (
     <>
       <div className="flex flow-row relative  ">
-        <Navbar className=" " />
-        <MobileNavbar className="md:hidden" istrue={istrue} />
-        <div className="bg-gray-100 w-full pb-12 px-2 md:px-0 dark:bg-[#161616] transition-all duration-500">
-          <div className=" hidden md:flex flex-row justify-between items-center px-5 py-7">
+        <Navbar className=" " istrue={istrue} setIstrue={setIstrue} />
+        <MobileNavbar className="md:hidden" setIstrue={setIstrue} istrue={istrue} />
+        <div className={`bg-gray-100 w-full pb-12 px-2 md:px-0 dark:bg-[#161616] transition-all duration-500 ${istrue?'md:ml-64':'md:ml-36'} `}>
+          <div className=" hidden md:flex flex-row justify-between items-center pl-7 py-7">
             <span className="text-xl font-semibold dark:text-white">Upload CSV</span>
             <div className="flex flex-row items-center gap-2 ">
               <GoBell size={21}  className="dark:text-gray-100 text-gray-700 "/>
@@ -73,7 +76,7 @@ const Upload = () => {
           {isShow && (
             <div className="w-full pt-3 text-nowrap ">
               <span className="md:pl-10  text-xl font-bold dark:text-white transition-all duration-500">Uploads</span>
-              <div className="bg-gray-100  md:px-10">
+              <div className="bg-gray-100 dark:bg-[#161616] transition-all duration-500  md:px-10">
                 <UploadTable />
                 {/* <MobileUploadTable /> */}
               </div>

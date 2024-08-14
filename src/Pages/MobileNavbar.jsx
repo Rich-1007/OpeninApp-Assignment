@@ -1,29 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 
-const MobileNavbar = ({ istrue }) => {
-  const [isShow, setIsShow] = useState();
-  console.log(isShow);
-
-  useEffect(() => {
-    if (istrue) {
-      setIsShow(true);
-    }else{
-
-      setIsShow(false)
-    }
-  }, [istrue]);
-
+const MobileNavbar = ({ istrue, setIstrue }) => {
   function HandleFalse() {
-    setIsShow(false);
+    setIstrue(false);
   }
   return (
     <>
       <div
         className={
-          isShow
-            ? "  absolute transition-all duration-300 rounded-r-3xl px-6 py-10 bg-gray-100 dark:bg-[#0D0D0D] h-screen md:hidden"
-            : "max-w-0 transition-all duration-300"
+          istrue
+            ? "fixed top-0 bottom-0 left-0 transition-all z-10 duration-300 rounded-r-3xl px-6 py-10 bg-gray-100 dark:bg-[#0D0D0D] md:hidden"
+            : "fixed top-0 bottom-0  transition-all duration-700 z-10 -left-full bg-gray-100"
         }
       >
         <div className=" flex flex-row items-center justify-between pb-8">
@@ -33,7 +21,9 @@ const MobileNavbar = ({ istrue }) => {
             </div>
 
             <div>
-              <span className="font-semibold text-2xl dark:text-white transition-all duration-500">Base</span>
+              <span className="font-semibold text-2xl dark:text-white transition-all duration-500">
+                Base
+              </span>
             </div>
           </div>
 

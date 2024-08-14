@@ -4,8 +4,7 @@ import { MdInsertChart, MdOutlineNightlight } from "react-icons/md";
 import { WiDaySunny } from "react-icons/wi";
 import { DarkModeContext } from "../Context";
 
-const Navbar = () => {
-  const [istrue, setIstrue] = useState();
+const Navbar = ({ istrue, setIstrue}) => {
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   // const [dark, setDark] = useState(false);
@@ -18,8 +17,8 @@ const Navbar = () => {
       <div
         className={
           istrue
-            ? "dark:bg-[#0D0D0D] bg-white max-w-64 py-14 px-6 transition-all duration-100 hiden md:block "
-            : "bg-white dark:bg-[#0D0D0D] transition-all duration-700 max-w-40 py-14 px-6  hidden md:block"
+            ? " fixed top-0 bottom-0 dark:bg-[#0D0D0D] bg-white  py-14 px-6 transition-all hidden md:block "
+            : "fixed top-0 bottom-0 bg-white dark:bg-[#0D0D0D] transition-all  py-14 px-6  hidden md:block"
         }
       >
         <div className=" flex flex-row items-center justify-between pb-8">
@@ -29,10 +28,11 @@ const Navbar = () => {
             </div>
 
             <div
+              style={{ overflow: "hidden" }}
               className={
                 istrue
-                  ? "  transition-all duration-300 overflow-hidden max-w-full"
-                  : "   transition-all duration-200 overflow-hidden max-w-0"
+                  ? "  transition-all   max-w-64"
+                  : "   transition-all duration-300  max-w-0"
               }
             >
               <span className="font-semibold text-2xl dark:text-gray-100 transition-all duration-500 ">
@@ -114,7 +114,10 @@ const Navbar = () => {
           className=" flex flex-row justify-between items-center md:mt-16 w-fit bg-gray-200 py-2 px-2 gap-2 rounded-full  dark:bg-gray-400   "
         >
           <div className="rounded-full bg-gray-100 dark:bg-gray-400 transition-all duration-500  h-9 w-9 flex items-center justify-center">
-            <WiDaySunny size={30} className="dark:text-white transition-all duration-500  " />
+            <WiDaySunny
+              size={30}
+              className="dark:text-white transition-all duration-500  "
+            />
           </div>
           <div className="rounded-full  dark:bg-gray-500 transition-all duration-500  h-9 w-9 flex items-center justify-center">
             <MdOutlineNightlight

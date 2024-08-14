@@ -12,14 +12,14 @@ const TableRow = ({ item }) => {
           {item.links}
         </a>
       </td>
-      <td className="px-4 py-2 text-sm w-44 dark:text-white transition-all duration-500">{item.prefix}</td>
+      <td className="px-4 py-2  text-sm w-44 dark:text-white transition-all duration-500">{item.prefix}</td>
       <td className="px-4 py-2 w-72   ">
         <AddTag setSelectedTag={setSelectedTag} add_tags={item?.add_tags} />
       </td>
-      <td className="px-4 py-2 max-w-32 md:max-w-52 overflow-x-scroll invisible-scrollbar  ">
-        <div className=" px-1 gap-3 text-sm flex flex-row ">
+      <td className="px-4  py-2 max-w-32 md:max-w-52 overflow-x-scroll invisible-scrollbar  ">
+        <div className=" px-1 gap-3  text-sm flex flex-row">
           {selectedTag?.map((item) => (
-            <div className="bg-indigo-500  items-center justify-between gap-2 rounded-md px-2 py-1 text-white flex flex-row">
+            <div className="bg-indigo-500   items-center justify-between gap-2 rounded-md px-2 py-1 text-white flex flex-row">
               <span className="  ">{item}</span>
 
               <RxCross2 className="hover:cursor-pointer" size={15} />
