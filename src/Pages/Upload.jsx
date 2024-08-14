@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { GoBell } from "react-icons/go";
 import DropZone from "../Component/DropZone";
@@ -25,7 +25,7 @@ const Upload = () => {
         />
         <div
           className={`bg-gray-100 w-full pb-12  px-2 md:px-0 dark:bg-[#161616] transition-all duration-500 ${
-            istrue ? "md:ml-64" : "md:ml-36"
+            istrue ? "md:ml-64" : "md:ml-44"
           } `}
         >
           <div className=" hidden md:flex flex-row justify-between items-center px-7 py-7">

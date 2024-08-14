@@ -15,7 +15,6 @@ import Loader from "../Component/Loader";
 
 const Login = () => {
   const [user, setUser] = useState([]);
-  const [profile, setProfile] = useState([]);
   const [istrue, setIstrue] = useState(false);
 
   const navigate = useNavigate();
@@ -24,7 +23,6 @@ const Login = () => {
     onSuccess: (codeResponse) => setUser(codeResponse),
     onError: (error) => console.log("Login Failed:", error),
   });
-  // console.log(profile);
 
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
@@ -52,7 +50,7 @@ const Login = () => {
 
             setTimeout(() => {
               navigate("/Upload");
-            }, 5000);
+            }, 4000);
           }
         })
         .catch((err) => console.log(err));
@@ -166,9 +164,9 @@ const Login = () => {
 
               <div
                 onClick={HandleLogin}
-                className="bg-indigo-500 hover:cursor-pointer text-white dark:text-black transition-all duration-500 flex justify-center items-center rounded-lg py-3 "
+                className="bg-indigo-500 hover:cursor-pointer text-white dark:text-black transition-all duration-500 flex justify-center items-center rounded-lg py-3 h-12 "
               >
-                {istrue ? <Loader /> : <span>Sign In</span>}
+                {istrue ? <Loader /> : <span className="text-xl">Sign In</span>}
               </div>
             </div>
             <div className="text-center pt-4 flex flex-col md:flex-row justify-center">

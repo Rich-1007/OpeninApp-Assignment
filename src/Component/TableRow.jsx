@@ -6,13 +6,17 @@ const TableRow = ({ item }) => {
   const [selectedTag, setSelectedTag] = useState([]);
   return (
     <tr className="bg-white  dark:bg-[#161616] transition-all duration-500">
-      <td className="px-5 py-4 w-32 dark:text-white transition-all duration-500">{item.id}</td>
+      <td className="px-5 py-4 w-32 dark:text-white transition-all duration-500">
+        {item.id}
+      </td>
       <td className="px-4 py-2 w-52 text-nowrap">
         <a href={item.links} className="underline text-indigo-500">
           {item.links}
         </a>
       </td>
-      <td className="px-4 py-2  text-sm w-44 dark:text-white transition-all duration-500">{item.prefix}</td>
+      <td className="px-4 py-2  text-sm w-44 dark:text-white transition-all duration-500">
+        {item.prefix}
+      </td>
       <td className="px-4 py-2 w-72   ">
         <AddTag setSelectedTag={setSelectedTag} add_tags={item?.add_tags} />
       </td>

@@ -1,13 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { LuPanelLeftOpen } from "react-icons/lu";
-import { MdInsertChart, MdOutlineNightlight } from "react-icons/md";
+import { MdOutlineNightlight } from "react-icons/md";
 import { WiDaySunny } from "react-icons/wi";
 import { DarkModeContext } from "../Context";
 
-const Navbar = ({ istrue, setIstrue}) => {
+const Navbar = ({ istrue, setIstrue }) => {
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
-  // const [dark, setDark] = useState(false);
   const darkModeHandler = () => {
     toggleDarkMode();
   };
@@ -21,9 +20,9 @@ const Navbar = ({ istrue, setIstrue}) => {
             : "fixed top-0 bottom-0 bg-white dark:bg-[#0D0D0D] transition-all  py-14 px-6  hidden md:block"
         }
       >
-        <div className=" flex flex-row items-center justify-between pb-8">
-          <div className=" flex flex-row items-center justify-start gap-3 ">
-            <div className="w-14">
+        <div className=" flex flex-row items-center justify-between pb-8 ">
+          <div className=" flex flex-row items-center justify-start gap-1  ">
+            <div className="w-14 ">
               <img src="/Group 200.png" alt="" className="w-14" />
             </div>
 
@@ -31,11 +30,11 @@ const Navbar = ({ istrue, setIstrue}) => {
               style={{ overflow: "hidden" }}
               className={
                 istrue
-                  ? "  transition-all   max-w-64"
-                  : "   transition-all duration-300  max-w-0"
+                  ? "   transition-all duration-100   max-w-64"
+                  : "   transition-all duration-100 opacity-0  max-w-32 "
               }
             >
-              <span className="font-semibold text-2xl dark:text-gray-100 transition-all duration-500 ">
+              <span className="  font-semibold text-2xl dark:text-gray-100 transition-all duration-500 ">
                 Base
               </span>
             </div>
@@ -47,7 +46,7 @@ const Navbar = ({ istrue, setIstrue}) => {
             </button>
           </div>
         </div>
-        <div className="  flex flex-row gap-3">
+        <div className="  flex flex-row gap-3 ">
           <div className="overflow-hidden text-lg text-gray-400 font-semibold    flex  flex-col justify-between py-2">
             <div className=" flex flex-row items-center gap-3 py-3 w-9 h-9">
               <img src="/Upload-Page-pics/1-removebg-preview.png" alt="" />
@@ -83,7 +82,7 @@ const Navbar = ({ istrue, setIstrue}) => {
                 ? "max-w-44  overflow-hidden transition-all duration-500 "
                 : "max-w-0 overflow-hidden "
             } 
-`}
+           `}
           >
             <div className="flex flex-row items-center gap-3 py-3 w-44  ">
               <span>Dashboard</span>

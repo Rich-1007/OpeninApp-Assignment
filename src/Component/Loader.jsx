@@ -3,7 +3,7 @@ import React from "react";
 const Loader = () => {
   return (
     <>
-      <div class="grid   place-items-center rounded-lg ">
+      <div class="grid place-items-center rounded-lg ">
         <svg
           class="text-white animate-spin"
           viewBox="0 0 64 64"

@@ -2,7 +2,6 @@ import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { FiUpload } from "react-icons/fi";
 import Loader from "./Loader";
-// import { Toaster } from "react-hot-toast";
 import toast, { Toaster } from "react-hot-toast";
 
 function DropZone({ setIsShow }) {
@@ -11,36 +10,31 @@ function DropZone({ setIsShow }) {
 
   const notify = () => toast("File Uploaded");
   const DropAFile = () => toast("Please Drop a file ×");
-  // console.log(fileName);
 
   const onDrop = useCallback((acceptedFiles) => {
-    // console.log("file droped");
     setFileName(acceptedFiles[0].path);
-
-    
   }, []);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   function handleUpload() {
     if (fileName) {
       setIstrue((prev) => !prev);
-      
+
       setTimeout(() => {
-        notify()
+        notify();
         setFileName("");
         setIstrue(false);
-        
+
         setIsShow((prev) => !prev);
-        
       }, 3000);
-    }else{
-      DropAFile()
+    } else {
+      DropAFile();
     }
   }
 
   return (
     <>
-     <Toaster />
+      <Toaster />
       <div className="bg-white p-4 rounded-md md:w-2/5 space-y-3 dark:bg-[#0D0D0D] ">
         <div className="flex items-center justify-center  dark:bg-[#0D0D0D] w-72 md:w-auto h-60  bg-white border border-gray-200 dark:border-gray-600 rounded-xl">
           <div {...getRootProps()} className="">
@@ -77,7 +71,6 @@ function DropZone({ setIsShow }) {
 
         <div
           onClick={handleUpload}
-          // onClick={notify}
           className={
             fileName
               ? "bg-indigo-500 hover:cursor-pointer w-full rounded-md  py-2"
@@ -92,8 +85,7 @@ function DropZone({ setIsShow }) {
             <div className="flex flex-row items-center justify-center gap-2 text-white">
               <FiUpload />
 
-              <button >Upload</button>
-             
+              <button>Upload</button>
               {/* <div>
                 <button onClick={notify}>Make me a toast</button>
                 <Toaster />

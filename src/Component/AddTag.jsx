@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
-import { data } from "../data";
 
 const AddTag = ({ add_tags, setSelectedTag }) => {
   const [isTrue, setIsTrue] = useState(false);
@@ -9,8 +8,6 @@ const AddTag = ({ add_tags, setSelectedTag }) => {
     setIsTrue((prev) => !prev);
   }
   function HandleSelected(item) {
-    //  console.log(item);
-
     setSelectedTag((prev) => {
       if (prev.includes(item.tag)) {
         return prev;
@@ -29,7 +26,7 @@ const AddTag = ({ add_tags, setSelectedTag }) => {
           className="hover:cursor-pointer"
         />
         {isTrue && (
-          <div className="border border-gray-300 shadow-lg py-2 px-2 absolute z-10 top-10 flex flex-col items-center w-11/12 rounded-lg bg-white dark:bg-[#0D0D0D] transition-all duration-500 h-48 overflow-y-scroll invisible-scrollbar space-y-2  dark:border-black" >
+          <div className="border border-gray-300 shadow-lg py-2 px-2 absolute z-10 top-10 flex flex-col items-center w-11/12 rounded-lg bg-white dark:bg-[#0D0D0D] transition-all duration-500 h-48 overflow-y-scroll invisible-scrollbar space-y-2  dark:border-black">
             {add_tags.map((item, i) => (
               <span
                 key={i}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { RxCross2 } from "react-icons/rx";
 
 const MobileNavbar = ({ istrue, setIstrue }) => {
@@ -28,10 +28,7 @@ const MobileNavbar = ({ istrue, setIstrue }) => {
           </div>
 
           <div className="">
-            <button
-            //  onClick={(e) => setIstrue((prev) => !prev)}
-            >
-              {/* <LuPanelLeftOpen size={28} className="text-gray-400" /> */}
+            <button>
               <RxCross2
                 size={25}
                 color="gray"
