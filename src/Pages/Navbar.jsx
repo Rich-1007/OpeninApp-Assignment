@@ -110,7 +110,7 @@ const Navbar = ({ istrue, setIstrue }) => {
 
         <div
           onClick={darkModeHandler}
-          className=" flex flex-row justify-between items-center md:mt-16 w-fit bg-gray-200 py-2 px-2 gap-2 rounded-full  dark:bg-gray-400   "
+          className="  flex flex-row justify-between items-center md:mt-16 w-fit bg-gray-200 py-2 px-2 gap-2 rounded-full  dark:bg-gray-400   "
         >
           <div className="rounded-full bg-gray-100 dark:bg-gray-400 transition-all duration-500  h-9 w-9 flex items-center justify-center">
             <WiDaySunny
